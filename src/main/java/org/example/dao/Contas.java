@@ -1,10 +1,21 @@
 package org.example.dao;
 
-import java.time.LocalDate;
-import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class Contas {
-    public Contas(int idConta, int idUsuario, int tipo, int classe, int agencia, int numero, double saldo, String dataAbertura, String status) {
+
+    private int idConta;
+    private int idUsuario;
+    private int tipo;
+    private int classe;
+    private int agencia;
+    private int numero;
+    private double saldo;
+    private Date dataAbertura;
+    private String status;
+
+    public Contas(int idConta, int idUsuario, int tipo, int classe, int agencia, int numero, double saldo, Date dataAbertura, String status) {
         this.idConta = idConta;
         this.idUsuario = idUsuario;
         this.tipo = tipo;
@@ -16,17 +27,7 @@ public class Contas {
         this.status = status;
     }
 
-    //Atributos da classe;
-    private int idConta;
-    private int idUsuario;
-    private int tipo;
-    private int classe;
-    private int agencia;
-    private int numero;
-    private double saldo;
-    private Date dataAbertura;
-    private String status;
-
+    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
     public String getStatus() {
         return status;
@@ -36,11 +37,11 @@ public class Contas {
         this.status = status;
     }
 
-    public String getDataAbertura() {
+    public Date getDataAbertura() {
         return dataAbertura;
     }
 
-    public void setDataAbertura(String dataAbertura) {
+    public void setDataAbertura(Date dataAbertura) {
         this.dataAbertura = dataAbertura;
     }
 
